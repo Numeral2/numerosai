@@ -54,7 +54,7 @@
           document.getElementById("userId").innerText = generatedUserId;
           document.getElementById("userIdDisplay").classList.remove("hidden");
 
-          // Optionally, auto-fill the User ID in the verification input field
+          // Auto-fill the User ID in the verification input field
           document.getElementById("verifyUserId").value = generatedUserId;
 
           alert("Sign-up successful! Your User ID has been generated.");
@@ -83,17 +83,24 @@
     }
 
     function runTool() {
-      // Open X (Twitter) and inject the script
-      window.open("https://x.com/following", "_blank");
+      // Open Twitter's following page in a new tab
+      const newTab = window.open("https://x.com/following", "_blank");
 
-      setTimeout(() => {
-        const script = document.createElement("script");
-        script.src = "https://yourwebsite.com/highlight.js"; // Host this file on your server
+      if (!newTab) {
+        alert("Please allow pop-ups for this site.");
+        return;
+      }
+
+      // Wait for the tab to load, then inject the script
+      newTab.onload = function () {
+        const script = newTab.document.createElement("script");
+        script.src = "https://yourwebsite.com/highlight.js"; // Make sure this file is hosted correctly
         script.async = true;
-        document.body.appendChild(script);
-      }, 3000);
+        newTab.document.body.appendChild(script);
+      };
     }
   </script>
 
 </body>
 </html>
+

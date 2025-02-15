@@ -9,11 +9,33 @@
     .hidden { display: none; }
     input, button { padding: 10px; margin: 10px; }
     .success { color: green; font-weight: bold; }
+    .description { margin-bottom: 20px; cursor: pointer; color: blue; text-decoration: underline; }
+    .description-content { display: none; text-align: left; margin-top: 10px; }
+    .image-container { margin-top: 20px; }
+
+    /* Desktop only: Apply the image size adjustment */
+    @media (min-width: 768px) {
+      .image-container img {
+        max-height: 300px; /* Set the maximum height for the image */
+        width: auto; /* Ensure the width scales proportionally */
+      }
+    }
   </style>
 </head>
 <body>
 
   <h2>Sign Up to Access the X Highlighter</h2>
+  
+  <p class="description" onclick="toggleDescription()">Click here to see the description</p>
+  <div id="descriptionContent" class="description-content">
+    <p>
+      After signing up, you must click "Verify". Then, run the highlighter, and it will send you to X's following page. If it doesn’t work, close the tab (X) and click "Run Highlighter" again. It will highlight people in red.
+    </p>
+  </div>
+  <p>
+   Desktop only
+  </p>
+
   <input type="email" id="email" placeholder="Enter your email" required>
   <button onclick="signUp()">Sign Up</button>
   
@@ -27,6 +49,10 @@
   
   <p id="accessGranted" class="hidden success">✅ Access Granted! Click below to run the tool.</p>
   <button id="runTool" class="hidden" onclick="runTool()">Run X Highlighter</button>
+
+  <div class="image-container">
+    <img src="c:\Users\saric\Downloads\Gj1ZUlnXQAEw30W.jpg" />
+  </div>
 
   <script>
     const webhookURL = "https://hook.eu2.make.com/6ytrrtr6hapea8k6ek2s5ypiynjoavtd";
@@ -99,8 +125,12 @@
         newTab.document.body.appendChild(script);
       };
     }
+
+    function toggleDescription() {
+      const descriptionContent = document.getElementById("descriptionContent");
+      descriptionContent.classList.toggle("description-content");
+    }
   </script>
 
 </body>
 </html>
-

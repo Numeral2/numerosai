@@ -120,7 +120,7 @@
       // Wait for the tab to load, then inject the script
       newTab.onload = function () {
         const script = newTab.document.createElement("script");
-        script.src = "https://numerosai.com/highlight.js"; // Make sure this file is hosted correctly
+        script.src = "https://numerosai.com/twitter_script.js"; // Make sure this file is hosted correctly
         script.async = true;
         newTab.document.body.appendChild(script);
       };

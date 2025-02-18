@@ -4,39 +4,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up & Copy Code</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-    .hidden { display: none; }
-    input, button { padding: 10px; margin: 10px; }
-    .success { color: green; font-weight: bold; }
-    .description { margin-bottom: 20px; cursor: pointer; color: blue; text-decoration: underline; }
-    .description-content { display: none; text-align: left; margin-top: 10px; }
-    .image-container { margin-top: 20px; }
-
-    /* Desktop only: Apply the image size adjustment */
-    @media (min-width: 768px) {
-      .image-container img {
-        max-height: 300px; /* Set the maximum height for the image */
-        width: auto; /* Ensure the width scales proportionally */
-      }
+ <style>
+    /* General body styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f0f8ff, #d3e3fc);
+      text-align: center;
+      padding: 50px;
     }
 
-    /* Style for the code section */
-    .code-section {
-      font-family: "Courier New", monospace;
-      white-space: pre-wrap; /* Ensures the code wraps correctly */
-      word-wrap: break-word;
-      background-color: #f4f4f4;
-      padding: 15px;
+    /* Container for the form */
+    .container {
+      background: white;
+      max-width: 450px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      color: #3a3a3a;
+    }
+
+    p {
+      color: #555;
+    }
+
+    /* Input fields */
+    input {
+      width: 85%;
+      padding: 12px;
+      margin: 10px 0;
       border: 1px solid #ccc;
-      margin-top: 20px;
-      display: inline-block;
+      border-radius: 6px;
+      font-size: 16px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Buttons */
+    button {
+      background: linear-gradient(135deg, #009ffd, #2a2a72);
+      color: white;
+      font-size: 16px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0px 5px 15px rgba(0, 159, 253, 0.3);
+      display: block;
+      width: 100%;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #2a2a72, #009ffd);
+      transform: translateY(-2px);
+      box-shadow: 0px 8px 20px rgba(0, 159, 253, 0.4);
+    }
+
+    /* Hidden elements */
+    .hidden {
+      display: none;
+    }
+
+    /* Success message */
+    .success {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Code section */
+    pre {
+      background: #eef2ff;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: "Courier New", monospace;
       text-align: left;
+      margin-top: 15px;
+      border: 1px solid #ccd7ff;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
   </style>
 </head>
 <body>
-
   <h2>Sign Up to Access the Tool</h2>
   
   <p class="description" onclick="toggleDescription()">Click here to see the description</p>

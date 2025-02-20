@@ -3,108 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up & Copy Code</title>
- <style>
-    /* General body styling */
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #f0f8ff, #d3e3fc);
-      text-align: center;
-      padding: 50px;
+  <title>Sign Up & Run X Highlighter</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      padding: 20px; 
+      background-color: #f4f4f4; 
+      color: #333; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-
-    /* Container for the form */
-    .container {
-      background: white;
-      max-width: 450px;
-      margin: auto;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    .hidden { display: none; }
+    input, button { padding: 12px 18px; margin: 12px; border-radius: 8px; font-size: 16px; }
+    button { 
+      transition: 0.3s ease-in-out; 
+      background-color: #001f3f; 
+      color: white; 
+      border: none; 
+      cursor: pointer; 
+      box-shadow: 0 0 10px #000080;
     }
-
-    h2 {
-      color: #3a3a3a;
-    }
-
-    p {
-      color: #555;
-    }
-
-    /* Input fields */
-    input {
-      width: 85%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Buttons */
-    button {
-      background: linear-gradient(135deg, #009ffd, #2a2a72);
-      color: white;
-      font-size: 16px;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0px 5px 15px rgba(0, 159, 253, 0.3);
-      display: block;
-      width: 100%;
-    }
-
-    button:hover {
-      background: linear-gradient(135deg, #2a2a72, #009ffd);
-      transform: translateY(-2px);
-      box-shadow: 0px 8px 20px rgba(0, 159, 253, 0.4);
-    }
-
-    /* Hidden elements */
-    .hidden {
+    button:hover { box-shadow: 0 0 20px #0000ff; }
+    #authCode { font-weight: bold; background-color: lightgray; padding: 10px; display: inline-block; }
+    .clickable { color: blue; text-decoration: underline; cursor: pointer; }
+    .description-content {
       display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
-    /* Success message */
-    .success {
-      color: green;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    /* Code section */
-    pre {
-      background: #eef2ff;
-      padding: 15px;
-      border-radius: 8px;
-      font-family: "Courier New", monospace;
-      text-align: left;
-      margin-top: 15px;
-      border: 1px solid #ccd7ff;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
+    h2 { font-size: 24px; margin-bottom: 15px; }
+    p { font-size: 16px; }
   </style>
 </head>
 <body>
   <h2>Sign Up to Access the Tool</h2>
   
   <p class="description" onclick="toggleDescription()">Click here to see the description</p>
+  
   <div id="descriptionContent" class="description-content">
     <p>
-        After signing up, you must click "Verify". Then, you will see the code below, which you can copy. 
-        Next, bookmark the page, click on the folder, select "Choose another folder", and paste this code in the URL section.
-      And last go on your X following page, click bookmarklet and that's all.
+      After signing up, click "Verify" to generate the code below, which you can copy. Then, bookmark the page, select "Choose another folder," and paste the code in the URL section.
+      Finally, go to your X following page (website not aplication) and click the bookmarklet.
     </p>
   </div>
-  <p>
-   Desktop only
-  </p>
+  
+  <p>Desktop only</p>
+  
+  <script>
+    function toggleDescription() {
+      const descriptionContent = document.getElementById("descriptionContent");
+      if (descriptionContent.style.display === "none" || descriptionContent.style.display === "") {
+        descriptionContent.style.display = "block";
+      } else {
+        descriptionContent.style.display = "none";
+      }
+    }
+  </script>
 
   <input type="email" id="email" placeholder="Enter your email" required>
   <button onclick="signUp()">Sign Up</button>
@@ -123,15 +85,12 @@
   <div id="copySection" class="hidden">
     <h2>Copy Obfuscated Code</h2>
     <div id="obfuscatedCode" class="code-section">
-        javascript:(function(){function _0x26bd(_0xf35158,_0xb7a432){const _0x4fad94=_0x4fad();return _0x26bd=function(_0x26bdcd,_0x240f28){_0x26bdcd=_0x26bdcd-0x16b;let _0x38773c=_0x4fad94[_0x26bdcd];return _0x38773c;},_0x26bd(_0xf35158,_0xb7a432);}function _0x4fad(){const _0x2ada30=['/following','6219296twbmsi','bold','14lmKQaX','#ffcccb','appendChild','Please\x20run\x20this\x20script\x20on\x20your\x20Twitter\x20Following\x20page!','12ETYVZs','marked','innerText','div[data-testid=\x22SideNav_AccountSwitcher_Button\x22]\x20span','2303277kXXlzk','style','includes','6912983PHIqlB','backgroundColor','color','split','body','1dpMBiX','querySelectorAll','4ONLuPN','href','Not\x20Following\x20You','543987iwApVX','querySelector','trim','textContent','div','3025945KNoFvd','1179614DYdUKf','1963176RjNywP','observe','dataset','70oFkKOk','Follows\x20you','createElement','true'];_0x4fad=function(){return _0x2ada30;};return _0x4fad();}(function(_0x2b32f8,_0x3a30f1){const _0x7a277c=_0x26bd,_0x2c791c=_0x2b32f8();while(!![]){try{const _0x11b8a1=parseInt(_0x7a277c(0x17f))/0x1*(parseInt(_0x7a277c(0x18a))/0x2)+-parseInt(_0x7a277c(0x177))/0x3*(parseInt(_0x7a277c(0x181))/0x4)+-parseInt(_0x7a277c(0x189))/0x5+-parseInt(_0x7a277c(0x18b))/0x6*(-parseInt(_0x7a277c(0x16f))/0x7)+parseInt(_0x7a277c(0x16d))/0x8+-parseInt(_0x7a277c(0x184))/0x9*(-parseInt(_0x7a277c(0x18e))/0xa)+parseInt(_0x7a277c(0x17a))/0xb*(-parseInt(_0x7a277c(0x173))/0xc);if(_0x11b8a1===_0x3a30f1)break;else _0x2c791c['push'](_0x2c791c['shift']());}catch(_0x3a32cc){_0x2c791c['push'](_0x2c791c['shift']());}}}(_0x4fad,0x6c3af),((()=>{function _0x16bbf5(){const _0x15d55e=_0x26bd;try{return document[_0x15d55e(0x185)](_0x15d55e(0x176))?.[_0x15d55e(0x187)]['replace']('@','')[_0x15d55e(0x186)]();}catch(_0x3bdf75){return null;}}function _0x356dfe(){const _0x5dc7c4=_0x26bd;return window['location']['pathname'][_0x5dc7c4(0x17d)]('/')[0x1];}function _0x5c83f0(){const _0x4433a0=_0x16bbf5(),_0x3ca2b1=_0x356dfe();if(_0x4433a0&&_0x3ca2b1&&_0x4433a0!==_0x3ca2b1)return alert('This\x20script\x20can\x20only\x20be\x20used\x20on\x20your\x20own\x20Following\x20page.'),![];return!![];}function _0x5b7f06(_0x1cd5d3){const _0x3b85e6=_0x26bd;return _0x1cd5d3[_0x3b85e6(0x175)]['includes'](_0x3b85e6(0x18f));}function _0x4df9a7(){const _0x466d01=_0x26bd;document[_0x466d01(0x180)]('[data-testid=\x22UserCell\x22]')['forEach'](_0x166f17=>{const _0x6fe45b=_0x466d01;if(!_0x5b7f06(_0x166f17)&&!_0x166f17[_0x6fe45b(0x18d)][_0x6fe45b(0x174)]){_0x166f17[_0x6fe45b(0x178)][_0x6fe45b(0x17b)]=_0x6fe45b(0x170);const _0x42fe17=document[_0x6fe45b(0x190)](_0x6fe45b(0x188));_0x42fe17[_0x6fe45b(0x187)]=_0x6fe45b(0x183),_0x42fe17[_0x6fe45b(0x178)][_0x6fe45b(0x17c)]='red',_0x42fe17[_0x6fe45b(0x178)]['fontWeight']=_0x6fe45b(0x16e),_0x166f17[_0x6fe45b(0x171)](_0x42fe17),_0x166f17[_0x6fe45b(0x18d)]['marked']=_0x6fe45b(0x16b);}});}function _0x30187c(){const _0x2dd0f4=_0x26bd,_0x4b60d3=new MutationObserver(_0x4df9a7);_0x4b60d3[_0x2dd0f4(0x18c)](document[_0x2dd0f4(0x17e)],{'childList':!![],'subtree':!![]});}function _0x48a840(){setTimeout(()=>{const _0x22d17b=_0x26bd;_0x5c83f0()&&(window['location'][_0x22d17b(0x182)][_0x22d17b(0x179)](_0x22d17b(0x16c))?(_0x4df9a7(),_0x30187c()):alert(_0x22d17b(0x172)));},0x1388);}_0x48a840();})()));})();
+        <!-- You can paste the obfuscated code here -->
+         javascript:(function(){function _0x26bd(_0xf35158,_0xb7a432){const _0x4fad94=_0x4fad();return _0x26bd=function(_0x26bdcd,_0x240f28){_0x26bdcd=_0x26bdcd-0x16b;let _0x38773c=_0x4fad94[_0x26bdcd];return _0x38773c;},_0x26bd(_0xf35158,_0xb7a432);}function _0x4fad(){const _0x2ada30=['/following','6219296twbmsi','bold','14lmKQaX','#ffcccb','appendChild','Please\x20run\x20this\x20script\x20on\x20your\x20Twitter\x20Following\x20page!','12ETYVZs','marked','innerText','div[data-testid=\x22SideNav_AccountSwitcher_Button\x22]\x20span','2303277kXXlzk','style','includes','6912983PHIqlB','backgroundColor','color','split','body','1dpMBiX','querySelectorAll','4ONLuPN','href','Not\x20Following\x20You','543987iwApVX','querySelector','trim','textContent','div','3025945KNoFvd','1179614DYdUKf','1963176RjNywP','observe','dataset','70oFkKOk','Follows\x20you','createElement','true'];_0x4fad=function(){return _0x2ada30;};return _0x4fad();}(function(_0x2b32f8,_0x3a30f1){const _0x7a277c=_0x26bd,_0x2c791c=_0x2b32f8();while(!![]){try{const _0x11b8a1=parseInt(_0x7a277c(0x17f))/0x1*(parseInt(_0x7a277c(0x18a))/0x2)+-parseInt(_0x7a277c(0x177))/0x3*(parseInt(_0x7a277c(0x181))/0x4)+-parseInt(_0x7a277c(0x189))/0x5+-parseInt(_0x7a277c(0x18b))/0x6*(-parseInt(_0x7a277c(0x16f))/0x7)+parseInt(_0x7a277c(0x16d))/0x8+-parseInt(_0x7a277c(0x184))/0x9*(-parseInt(_0x7a277c(0x18e))/0xa)+parseInt(_0x7a277c(0x17a))/0xb*(-parseInt(_0x7a277c(0x173))/0xc);if(_0x11b8a1===_0x3a30f1)break;else _0x2c791c['push'](_0x2c791c['shift']());}catch(_0x3a32cc){_0x2c791c['push'](_0x2c791c['shift']());}}}(_0x4fad,0x6c3af),((()=>{function _0x16bbf5(){const _0x15d55e=_0x26bd;try{return document[_0x15d55e(0x185)](_0x15d55e(0x176))?.[_0x15d55e(0x187)]['replace']('@','')[_0x15d55e(0x186)]();}catch(_0x3bdf75){return null;}}function _0x356dfe(){const _0x5dc7c4=_0x26bd;return window['location']['pathname'][_0x5dc7c4(0x17d)]('/')[0x1];}function _0x5c83f0(){const _0x4433a0=_0x16bbf5(),_0x3ca2b1=_0x356dfe();if(_0x4433a0&&_0x3ca2b1&&_0x4433a0!==_0x3ca2b1)return alert('This\x20script\x20can\x20only\x20be\x20used\x20on\x20your\x20own\x20Following\x20page.'),![];return!![];}function _0x5b7f06(_0x1cd5d3){const _0x3b85e6=_0x26bd;return _0x1cd5d3[_0x3b85e6(0x175)]['includes'](_0x3b85e6(0x18f));}function _0x4df9a7(){const _0x466d01=_0x26bd;document[_0x466d01(0x180)]('[data-testid=\x22UserCell\x22]')['forEach'](_0x166f17=>{const _0x6fe45b=_0x466d01;if(!_0x5b7f06(_0x166f17)&&!_0x166f17[_0x6fe45b(0x18d)][_0x6fe45b(0x174)]){_0x166f17[_0x6fe45b(0x178)][_0x6fe45b(0x17b)]=_0x6fe45b(0x170);const _0x42fe17=document[_0x6fe45b(0x190)](_0x6fe45b(0x188));_0x42fe17[_0x6fe45b(0x187)]=_0x6fe45b(0x183),_0x42fe17[_0x6fe45b(0x178)][_0x6fe45b(0x17c)]='red',_0x42fe17[_0x6fe45b(0x178)]['fontWeight']=_0x6fe45b(0x16e),_0x166f17[_0x6fe45b(0x171)](_0x42fe17),_0x166f17[_0x6fe45b(0x18d)]['marked']=_0x6fe45b(0x16b);}});}function _0x30187c(){const _0x2dd0f4=_0x26bd,_0x4b60d3=new MutationObserver(_0x4df9a7);_0x4b60d3[_0x2dd0f4(0x18c)](document[_0x2dd0f4(0x17e)],{'childList':!![],'subtree':!![]});}function _0x48a840(){setTimeout(()=>{const _0x22d17b=_0x26bd;_0x5c83f0()&&(window['location'][_0x22d17b(0x182)][_0x22d17b(0x179)](_0x22d17b(0x16c))?(_0x4df9a7(),_0x30187c()):alert(_0x22d17b(0x172)));},0x1388);}_0x48a840();})()));})();
 ;
     </div>
     <br>
     <button onclick="copyCode()">Copy Code</button>
-  </div>
-
-  <div class="image-container">
-    <img src="" />
   </div>
 
   <script>
@@ -179,32 +138,25 @@
         return;
       }
 
-      // Verify that the input ID matches the generated User ID
+      // Verify that the entered ID matches the generated one
       if (inputId === generatedUserId) {
         document.getElementById("accessGranted").classList.remove("hidden");
-
-        // Display the copy code section after successful verification
         document.getElementById("copySection").classList.remove("hidden");
       } else {
-        alert("Invalid User ID. Please enter the correct ID.");
+        alert("Invalid User ID. Please try again.");
       }
     }
 
-    function toggleDescription() {
-      const descriptionContent = document.getElementById("descriptionContent");
-      descriptionContent.classList.toggle("description-content");
-    }
-
     function copyCode() {
-      const codeElement = document.getElementById("obfuscatedCode");
-      const range = document.createRange();
-      range.selectNode(codeElement);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      document.execCommand("copy");
-      alert("Code copied to clipboard!");
+      const codeText = document.getElementById("obfuscatedCode").innerText;
+      navigator.clipboard.writeText(codeText)
+        .then(() => alert("Code copied to clipboard!"))
+        .catch(err => alert("Failed to copy code."));
     }
   </script>
-
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 NumerosAI. All rights reserved.</p>
+  </footer>
 </body>
 </html>
